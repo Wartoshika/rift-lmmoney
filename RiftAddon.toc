@@ -1,0 +1,25 @@
+Identifier = "LmMoney"
+Name = "LooM Money"
+Description = "Ein Tool um den Geldfluss besser kontrollieren zu können"
+Author = "Wartoshika@Brutwacht"
+Email = "oliverwarrings@freenet.de"
+Version = "0.1"
+Environment = "3.7"
+
+SavedVariables = {
+  LmMoneyGlobal = 'character'
+}
+
+Embed = {
+  ["vendor/lmutils"] = true,
+}
+
+Dependencies = {
+  LmUtils = {"required", "before"}
+}
+
+RunOnStartup = {
+  "global.lua",
+  "ui.lua",
+  "main.lua"
+}
