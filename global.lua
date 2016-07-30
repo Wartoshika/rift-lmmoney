@@ -1,9 +1,11 @@
 LmMoney = {
     Ui = {},
+    Utils = LmUtils,
+    Engine = {},
     Options = {
         silver = 0,
         windowPosition = {
-            x = 100, y = 0
+            x = 300, y = 300
         }
     }
 }

@@ -20,10 +20,21 @@ local function init()
     -- gui bauen
     LmMoney.Ui.init(addon)
 
+    -- events erstellen
+    Command.Event.Attach(Event.Currency, LmMoney.Engine.currencyUpdate, "LmMoney.Engine.currencyUpdate")
+
     -- erfolgreichen start ausgeben
     print("erfolgreich geladen (v " .. addon.toc.Version .. ")")
 
 end
 
+-- speichert die gesetzten optionen
+local function saveOptionVariables()
+
+    -- ueberschreiben
+    LmMoneyGlobal = LmMoney.Options
+end
+
 -- init event binden
 Command.Event.Attach(Event.Addon.Load.End, init, "init")
+Command.Event.Attach(Event.Addon.Shutdown.Begin, saveOptionVariables, "saveOptionVariables")
